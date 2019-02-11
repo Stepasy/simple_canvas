@@ -1,0 +1,15 @@
+#wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 0 15px;
+}
+
+.img1{
+    padding: 0 0 15px;
+}
+
+#canvas {
+    border: 1px solid #000;
+    width: 100%;
+}
