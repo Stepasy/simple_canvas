@@ -9,17 +9,21 @@
     max-width: 1120px;
     width: 100%;
     margin: 0 auto;
+    position: relative;
 
     .slide {
-        @include animate (width, 0.3s, linear);
-        padding: 0 15px;
+        // position: relative;
+        @include animate (width, 1s, linear);
+        margin: 0 15px;
         width: 20%;
+        overflow: hidden;
 
         &-heading {
             padding: 0 15px;
-            margin: 47px 0 71px 0;
+            margin: 24px 0 35px 0;
             text-transform: uppercase;
             font-size: 18px;
+
             .fas {
                 margin-left: 0%;
             }
@@ -36,7 +40,7 @@
             width: 40%;
 
             .holder-frame {
-                padding-top: 143.543%;
+                width: 40%;
             }
 
             .slide-text {
@@ -48,8 +52,7 @@
             width: 40%;
 
             .holder-frame {
-                @include animate (padding, 0.01s, linear);
-                // padding-top: 143.543%;
+                width: 40%;
             }
 
             .slide-text {

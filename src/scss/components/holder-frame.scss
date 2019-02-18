@@ -1,10 +1,9 @@
 .holder-frame {
-    position: relative;
+    position: absolute;
     overflow: hidden;
     @include animate (padding, 0.3s, linear);
-    height: 600px;
-    // @include med
-    // padding-top: 309.28%;
+    padding-top: 53.572%;
+    width: 20%;
 
     &:before {
         @include animate (opacity, 1s);
@@ -21,7 +20,7 @@
             z-index: -1;
         }
 
-        .opener &{
+        .opener & {
             background-size: 100% 100%;
         }
     }

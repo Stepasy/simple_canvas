@@ -6,8 +6,6 @@
 import ANIMATE from './modules/bayan-animate';
 import GALLERY from './modules/mobile-gallery';
 
-
-
 (($) => {
   // When DOM is ready
   $(() => {

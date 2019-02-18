@@ -14,7 +14,7 @@
     height: 100%;
     cursor: pointer;
     overflow: hidden;
-    
+
     &:before {
         @include animate (opacity, 1s);
         position: absolute;
