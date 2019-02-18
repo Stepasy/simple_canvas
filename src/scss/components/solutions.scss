@@ -1,0 +1,60 @@
+.solutions {
+    width: 100%;
+    background-color: #eeeeee;
+    padding: 15px 0;
+}
+
+.accordion {
+    display: flex;
+    max-width: 1120px;
+    width: 100%;
+    margin: 0 auto;
+
+    .slide {
+        @include animate (width, 0.3s, linear);
+        padding: 0 15px;
+        width: 20%;
+
+        &-heading {
+            padding: 0 15px;
+            margin: 47px 0 71px 0;
+            text-transform: uppercase;
+            font-size: 18px;
+            .fas {
+                margin-left: 0%;
+            }
+        }
+
+        &-text {
+            padding: 0 15px;
+            display: none;
+            max-width: 330px;
+
+        }
+
+        &.active {
+            width: 40%;
+
+            .holder-frame {
+                padding-top: 143.543%;
+            }
+
+            .slide-text {
+                display: block;
+            }
+        }
+
+        &.opener {
+            width: 40%;
+
+            .holder-frame {
+                @include animate (padding, 0.01s, linear);
+                // padding-top: 143.543%;
+            }
+
+            .slide-text {
+                display: block;
+            }
+        }
+    }
+}

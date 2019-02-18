@@ -3,14 +3,15 @@
 // This file will be compiled into app.js and will not be minified.
 // Feel free with using ES6 here.
 
-import ANIMATE from './modules/animate';
-import CANVAS from './modules/canvas';
+import ANIMATE from './modules/bayan-animate';
+import GALLERY from './modules/mobile-gallery';
+
 
 
 (($) => {
   // When DOM is ready
   $(() => {
     ANIMATE.init();
-    CANVAS.init();
+    GALLERY.init();
   });
 })(jQuery);

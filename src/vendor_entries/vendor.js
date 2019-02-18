@@ -4,5 +4,5 @@
 
 module.exports = [
   './node_modules/jquery/dist/jquery.js',
-  './node_modules/gsap/src/minified/TweenMax.min.js',
+  './node_modules/swiper/dist/js/swiper.min.js',
 ];
