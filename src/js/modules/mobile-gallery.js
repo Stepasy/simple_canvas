@@ -67,7 +67,6 @@ const gallery = ($ => {
       direction: 'vertical',
       loop: true,
       autoHeight: true,
-      resistanceRatio: false,
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
