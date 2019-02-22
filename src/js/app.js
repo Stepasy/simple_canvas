@@ -3,15 +3,13 @@
 // This file will be compiled into app.js and will not be minified.
 // Feel free with using ES6 here.
 
-import ANIMATE from './modules/bayan-animate';
-import GALLERY from './modules/mobile-gallery';
-
-
+import animate from './modules/bayan-animate';
+import gallery from './modules/mobile-gallery';
 
 (($) => {
   // When DOM is ready
   $(() => {
-    ANIMATE.init();
-    GALLERY.init();
+    animate.init();
+    gallery.init();
   });
 })(jQuery);

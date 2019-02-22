@@ -1,7 +1,7 @@
 .holder-frame {
+  @include animate (padding, 0.3s, linear);
     position: relative;
     overflow: hidden;
-    @include animate (padding, 0.3s, linear);
     height: 600px;
     // @include med
     // padding-top: 309.28%;
