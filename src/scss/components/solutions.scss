@@ -1,60 +1,142 @@
-.solutions {
-    width: 100%;
-    background-color: #eeeeee;
-    padding: 15px 0;
-}
+// .solutions {
+//     width: 100%;
+//     background-color: #eeeeee;
+//     padding: 15px 0;
+// }
 
-.accordion {
+// .accordion {
+//     display: flex;
+//     max-width: 1120px;
+//     width: 100%;
+//     margin: 0 auto;
+
+//     .slide {
+//         @include animate (width, 0.3s, linear);
+//         padding: 0 15px;
+//         width: 20%;
+
+//         &-heading {
+//             padding: 0 15px;
+//             margin: 47px 0 71px 0;
+//             text-transform: uppercase;
+//             font-size: 18px;
+//             .fas {
+//                 margin-left: 0%;
+//             }
+//         }
+
+//         &-text {
+//             padding: 0 15px;
+//             display: none;
+//             max-width: 330px;
+
+//         }
+
+//         &.active {
+//             width: 40%;
+
+//             .holder-frame {
+//                 padding-top: 143.543%;
+//             }
+
+//             .slide-text {
+//                 display: block;
+//             }
+//         }
+
+//         &.opener {
+//             width: 40%;
+
+//             .holder-frame {
+//                 @include animate (padding, 0.01s, linear);
+//                 // padding-top: 143.543%;
+//             }
+
+//             .slide-text {
+//                 display: block;
+//             }
+//         }
+//     }
+// }
+
+.four-slide {
+  overflow: hidden;
+  background-color: #eee;
+  width: 100%;
+
+  .accordion {
     display: flex;
-    max-width: 1120px;
-    width: 100%;
+    max-width: 1030px;
     margin: 0 auto;
+    position: relative;
+    width: 100%;
+    padding: 15px;
+  }
 
-    .slide {
-        @include animate (width, 0.3s, linear);
-        padding: 0 15px;
-        width: 20%;
+  .slide {
+    width: 40%;
+    flex-shrink: 0;
+    transition: transform .3s;
+    position: relative;
 
-        &-heading {
-            padding: 0 15px;
-            margin: 47px 0 71px 0;
-            text-transform: uppercase;
-            font-size: 18px;
-            .fas {
-                margin-left: 0%;
-            }
-        }
+    &:first-child {
+      z-index: 3;
 
-        &-text {
-            padding: 0 15px;
-            display: none;
-            max-width: 330px;
-
-        }
-
-        &.active {
-            width: 40%;
-
-            .holder-frame {
-                padding-top: 143.543%;
-            }
-
-            .slide-text {
-                display: block;
-            }
-        }
-
-        &.opener {
-            width: 40%;
-
-            .holder-frame {
-                @include animate (padding, 0.01s, linear);
-                // padding-top: 143.543%;
-            }
-
-            .slide-text {
-                display: block;
-            }
-        }
+      .inner-holder {
+        transform: translateX(50%);
+      }
     }
+
+    &:nth-child(2) {
+      z-index: 2;
+
+      .inner-holder {
+        transform: translateX(50%);
+      }
+    }
+
+    &:nth-child(3) {
+      z-index: 1;
+    }
+
+    &:last-child {
+      z-index: 0;
+
+      .holder-frame {
+        border-right: 0;
+      }
+    }
+
+    &.current {
+      .inner-holder {
+        transform: translateX(0);
+      }
+
+      +.slide {
+        .inner-holder {
+          transform: translateX(0) !important;
+        }
+      }
+    }
+  }
+
+  .holder-frame {
+    border-right: 15px solid #eee;
+    padding-bottom: calc((1200/860)*100%);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+  }
+
+  .inner-holder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: transform .3s;
+  }
 }
