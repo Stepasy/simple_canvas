@@ -3,13 +3,17 @@
 // This file will be compiled into app.js and will not be minified.
 // Feel free with using ES6 here.
 
-import animate from './modules/bayan-animate';
-import gallery from './modules/mobile-gallery';
+import fourAnimate from './modules/four-bayan-animate';
+import fourGallery from './modules/four-mobile-gallery';
+import threeGallery from './modules/three-mobile-gallery';
+import threeAnimate from './modules/three-bayan-animate';
 
 (($) => {
   // When DOM is ready
   $(() => {
-    animate.init();
-    gallery.init();
+    fourAnimate.init();
+    fourGallery.init();
+    threeGallery.init();
+    threeAnimate.init();
   });
 })(jQuery);

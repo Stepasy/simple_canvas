@@ -1,79 +1,90 @@
-.holder-frame4 {
-    &:before {
-        background-position: 100% 100%;
-        background-size: 250% 100%;
-        background: url('../../../assets/images/launch.png');
-    }
-}
-
 .launch-holder {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-    max-height: 1200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-height: 1200px;
 
-    .slide.active & {
-
-        .launch-1 {
-            transform: translateY(-37.67%);
-            opacity: 1;
-        }
-
-        .launch-2 {
-            transform: translateY(-28.25%);
-            opacity: .85;
-        }
-
-        .launch-3 {
-            transform: translateY(-18.83%);
-            opacity: .8;
-        }
-
-        .launch-4 {
-            transform: translateY(-9.42%);
-            opacity: .75;
-        }
-
-        .launch-5 {
-            transform: translateY(0);
-            opacity: .7;
-        }
-
-    }
+  .slide.active &,
+  .swiper-slide.current & {
 
     .launch {
-        position: absolute;
-        transition: transform 2s ease-in-out,
-            opacity 1s 1s ease-in-out;
-        z-index: 3;
-        width: 100%;
-        height: 100%;
-        background: url('../../../assets/images/launch.png') center center no-repeat;
-        background-size: 100% 100%;
-        transform: translateY(0);
+      transition: transform 2s ease-in-out,
+        opacity 1s 1s ease-in-out;
     }
 
     .launch-1 {
-        z-index: 9;
+      transform: translate3d(0, -37.67%, 0);
+      opacity: 1;
     }
 
     .launch-2 {
-        z-index: 8;
+      transform: translate3d(0, -28.25%, 0);
+
+      @include media ('<tablet') {
+        opacity: .9;
+      }
     }
 
     .launch-3 {
-        z-index: 7;
+      transform: translate3d(0, -18.83%, 0);
+
+      @include media ('<tablet') {
+        opacity: .91;
+      }
     }
 
     .launch-4 {
-        z-index: 6;
+      transform: translate3d(0, -9.42%, 0);
+
+      @include media ('<tablet') {
+        opacity: .92;
+      }
     }
 
     .launch-5 {
-        z-index: 5;
+      transform: translate3d(0, 0, 0);
+
+      @include media ('<tablet') {
+        opacity: .93;
+      }
     }
+
+  }
+
+  .launch {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: url('../../../assets/images/launch.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    transform: translate3d(0, 0, 0);
+    @include media ('<tablet'){
+      background: url('../../../assets/images/launch-768.jpg') center center no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  .launch-1 {
+    z-index: 9;
+  }
+
+  .launch-2 {
+    z-index: 8;
+  }
+
+  .launch-3 {
+    z-index: 7;
+  }
+
+  .launch-4 {
+    z-index: 6;
+  }
+
+  .launch-5 {
+    z-index: 5;
+  }
 }

@@ -1,12 +1,11 @@
 /* eslint-disable*/
 
-const gallery = (($) => {
+const fourGallery = (($) => {
   const $section = $('.four-slide');
-
   if (!($section)) return;
 
-  const ACTIVE = 'active';
-  const OPENER = 'opener';
+  const ACTIVE = 'current';
+  const INNER_HOLDER_CLASS = 'inner-holder';
 
   const HOLDER = 'solutions';
   const SLIDE = 'slide';
@@ -26,14 +25,17 @@ const gallery = (($) => {
     const $holder = $section.find(`.${holder}`);
     const $slide = $section.find(`.${slide}`);
     const $wrapper = $section.find(`.${wrapper}`);
+    const $innerHolder = $section.find(`.${INNER_HOLDER_CLASS}`);
     $holder.removeClass().addClass(chHolder);
     $slide.removeClass().addClass(chSlide);
     $wrapper.removeClass().addClass(chWrapper);
+    $innerHolder.removeAttr('style');
     $slide.removeAttr('style');
     if (!($slide.eq(2).hasClass(SW_SLIDE))) $slide.eq(2).addClass('current');
   };
 
   const _destroySwiper = () => {
+    if ($section.length === 0) return;
     mySwiper.destroy(true, true);
   };
 
@@ -56,7 +58,8 @@ const gallery = (($) => {
     if (breakpoint.matches === true) {
       if (mySwiper !== undefined) _destroySwiper();
       return _removeSwiper();
-    } if (breakpoint.matches === false) {
+    }
+    if (breakpoint.matches === false) {
       return _addSwiper(), _enableSwiper();
     }
   };
@@ -65,7 +68,6 @@ const gallery = (($) => {
     mySwiper = new Swiper($section.find(`.${SW_HOLDER}`), {
       slidesPerView: 1,
       direction: 'vertical',
-      loop: true,
       pagination: {
         el: '.swiper-pagination',
         type: 'bullets',
@@ -88,4 +90,4 @@ const gallery = (($) => {
   };
 })(jQuery);
 
-export default gallery;
+export default fourGallery;
