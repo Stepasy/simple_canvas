@@ -8,21 +8,35 @@ const boxes = ($ => {
 
   const _animation = () => {
     const $boxes = $('.boxes');
+    if ($boxes.length === 0) return;
     const BOX = 'box';
     const ACTIVE = 'active';
     const HOVERED = 'hovered';
     const $box = $boxes.find(`.${BOX}`);
-    let $time = 3000;
+    const $delay = 1000;
+    let $timer;
+
+    const _timer = (el, time) => {
+      $timer = setTimeout(() => {
+        $(el).addClass(ACTIVE).removeClass(HOVERED);
+      }, time);
+    };
+
+    const _stopTimer = () => {
+      clearTimeout($timer);
+    };
 
     const _addClass = (el, event) => {
       $(el).on(event, () => {
-        $(el).addClass(ACTIVE);
+        $(el).addClass(HOVERED);
+        _timer(el, $delay)
       });
     };
 
     const _removeClass = (el, event) => {
       $(el).on(event, () => {
-        $(el).removeClass(ACTIVE);
+        _stopTimer();
+        $(el).removeClass(ACTIVE).removeClass(HOVERED);
       });
     };
 

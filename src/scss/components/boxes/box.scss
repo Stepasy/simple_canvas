@@ -4,6 +4,31 @@
   background-color: #fff;
   padding: 200px 30px 40px 45px;
   overflow: hidden;
+  margin: 0 15px 15px 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include media ('<1035px') {
+    width: 100%;
+    max-width: 49%;
+    margin-right: 0;
+  }
+
+  @include media ('<tablet') {
+    padding: 50px 90px 20px 65px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  @include media ('<phone') {
+    padding: 50px 50px 20px 65px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
 
   &:before {
     position: absolute;
@@ -15,7 +40,7 @@
   }
 
   &:after {
-    @include animate (transform);
+    @include animate (transform, 0.15s);
     position: absolute;
     top: 0;
     left: 0;
@@ -28,30 +53,30 @@
 
   &.active {
     &:after {
-      @include animate (transform);
-      transform: translateY(50%);
+      @include animate (transform, 0.15s);
+      transform: translateY(63%);
     }
 
     .collapse {
       .line:first-child {
-        @include animate (transform);
-        transform: rotate(-90deg);
+        @include animate (transform, 0.15s);
+        transform: rotate(0);
       }
     }
 
     .entry-text {
 
       .text {
-        @include animate (opacity);
+        @include animate (opacity, 0.15s);
         opacity: 1;
       }
     }
   }
 
-  &.hovered{
+  &.hovered {
     &:after {
-      @include animate (transform);
-      transform: translateY(90%);
+      @include animate (transform, 0.15s);
+      transform: translateY(94%);
     }
   }
 
@@ -70,7 +95,7 @@
     }
 
     .text {
-      @include animate (opacity);
+      @include animate (opacity, 0.15s);
       margin-top: auto;
       opacity: 0;
     }
@@ -89,8 +114,8 @@
       content: '';
 
       &:first-child {
-        @include animate (transform);
-        transform: rotate(0);
+        @include animate (transform, 0.15s);
+        transform: rotate(-90deg);
       }
     }
   }
