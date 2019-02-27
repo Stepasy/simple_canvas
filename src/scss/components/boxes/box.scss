@@ -1,0 +1,97 @@
+.box {
+  position: relative;
+  max-width: 240px;
+  background-color: #fff;
+  padding: 200px 30px 40px 45px;
+  overflow: hidden;
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 10px;
+  }
+
+  &:after {
+    @include animate (transform);
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 10px;
+    background: #fff;
+    transform: translateY(100%);
+  }
+
+  &.active {
+    &:after {
+      @include animate (transform);
+      transform: translateY(50%);
+    }
+
+    .collapse {
+      .line:first-child {
+        @include animate (transform);
+        transform: rotate(-90deg);
+      }
+    }
+
+    .entry-text {
+
+      .text {
+        @include animate (opacity);
+        opacity: 1;
+      }
+    }
+  }
+
+  &.hovered{
+    &:after {
+      @include animate (transform);
+      transform: translateY(90%);
+    }
+  }
+
+  @for $i from 1 through 4 {
+    &-#{$i} {
+      &:before {
+        background: url('../../../../assets/images/box-#{$i}.jpg') no-repeat;
+      }
+    }
+  }
+
+  .entry-text {
+    .heading {
+      text-transform: uppercase;
+      font-size: 24px;
+    }
+
+    .text {
+      @include animate (opacity);
+      margin-top: auto;
+      opacity: 0;
+    }
+  }
+
+  .collapse {
+    position: relative;
+    margin: 0 0 0 10px;
+
+    .line {
+      top: 50%;
+      width: 14px;
+      height: 4px;
+      position: absolute;
+      background: #268df6;
+      content: '';
+
+      &:first-child {
+        @include animate (transform);
+        transform: rotate(0);
+      }
+    }
+  }
+}

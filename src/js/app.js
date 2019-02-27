@@ -7,6 +7,7 @@ import fourAnimate from './modules/four-bayan-animate';
 import fourGallery from './modules/four-mobile-gallery';
 import threeGallery from './modules/three-mobile-gallery';
 import threeAnimate from './modules/three-bayan-animate';
+import boxes from './modules/boxes';
 
 (($) => {
   // When DOM is ready
@@ -15,5 +16,6 @@ import threeAnimate from './modules/three-bayan-animate';
     fourGallery.init();
     threeGallery.init();
     threeAnimate.init();
+    boxes.init();
   });
 })(jQuery);
