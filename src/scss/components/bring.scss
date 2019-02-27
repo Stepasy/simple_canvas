@@ -1,77 +1,88 @@
-.holder-frame3 {
-    &:before {
-        background-position: 66.66% 100%;
-        background-size: 250% 100%;
-        background: url('../../../assets/images/bring.png');
-    }
-}
-
 .bring-holder {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    cursor: pointer;
-    overflow: hidden;
-    max-height: 1200px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  max-height: 1200px;
 
-    .slide.active & {
-
-        .bring-1 {
-            transform: translateX(0);
-            opacity: .75;
-        }
-
-        .bring-2 {
-            transform: translateX(9.42%);
-            opacity: .8;
-        }
-
-        .bring-3 {
-            transform: translateX(18.83%);
-            opacity: .85;
-        }
-
-        .bring-4 {
-            transform: translateX(28.25%);
-            opacity: .9;
-        }
-
-        .bring-5 {
-            transform: translateX(37.67%);
-        }
-    }
+  .slide.active &,
+  .swiper-slide.current & {
 
     .bring {
-        position: absolute;
-        transition: transform 2s ease-in-out,
-            opacity 1s 1s ease-in-out;
-        z-index: 3;
-        width: 100%;
-        height: 100%;
-        background: url('../../../assets/images/bring.png') center center no-repeat;
-        background-size: 100% 100%;
-        transform: translateY(0);
+      transition: transform 2s ease-in-out,
+        opacity 1s 1s ease-in-out;
     }
 
     .bring-1 {
-        z-index: 5;
+      transform: translateX(0);
+
+      @include media ('<tablet') {
+        opacity: .9;
+      }
     }
 
     .bring-2 {
-        z-index: 6;
+      transform: translateX(9.42%);
+
+      @include media ('<tablet') {
+        opacity: .91;
+      }
     }
 
     .bring-3 {
-        z-index: 7;
+      transform: translateX(18.83%);
+
+      @include media ('<tablet') {
+        opacity: .92;
+      }
     }
 
     .bring-4 {
-        z-index: 8;
+      transform: translateX(28.25%);
+
+      @include media ('<tablet') {
+        opacity: .93;
+      }
     }
 
     .bring-5 {
-        z-index: 9;
+      transform: translateX(37.67%);
     }
+  }
+
+  .bring {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: url('../../../assets/images/bring.jpg') center center no-repeat;
+    background-size: 100% 100%;
+    transform: translateY(0);
+    @include media ('<tablet'){
+      background: url('../../../assets/images/bring-768.jpg') center center no-repeat;
+      background-size: 100% 100%;
+    }
+  }
+
+  .bring-1 {
+    z-index: 5;
+  }
+
+  .bring-2 {
+    z-index: 6;
+  }
+
+  .bring-3 {
+    z-index: 7;
+  }
+
+  .bring-4 {
+    z-index: 8;
+  }
+
+  .bring-5 {
+    z-index: 9;
+  }
 }

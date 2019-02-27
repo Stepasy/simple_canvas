@@ -1,0 +1,137 @@
+.three-slide {
+  overflow: hidden;
+  background-color: #eee;
+  width: 100%;
+  padding: 15px;
+  @include media ('<tablet') {
+    padding: 0;
+  }
+  .slide-heading {
+    text-transform: uppercase;
+  }
+
+  .disp-none{
+    display: none;
+  }
+
+  .accordion {
+    display: flex;
+    max-width: 1030px;
+    margin: 0 auto;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+
+    @include media ('<tablet') {
+      display: none;
+    }
+
+    .slide-text {
+      @include animate (opacity);
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  .slide {
+    width: 40%;
+    flex-shrink: 0;
+    transition: transform .3s;
+    position: relative;
+    overflow: hidden;
+
+    &.current:not(.active) {
+      .entry-text {
+        @include animate (padding);
+        padding: 0 15px 0 0;
+      }
+    }
+
+    .entry-text {
+      padding: 0 15px 0 0;
+      transition: transform .3s,
+        padding .3s;
+      transform: translateX(25%);
+    }
+
+    &.current {
+      .entry-text {
+
+        transform: translateX(0);
+        padding: 0 15px;
+
+        .slide-text {
+          @include animate (opacity);
+          display: block;
+          opacity: 1;
+          width: 90%;
+
+        }
+      }
+
+    }
+
+    .mobile-link {
+      display: none;
+    }
+
+    &:first-child {
+      z-index: 2;
+      transform: translateX(0);
+
+      .inner-holder {
+        transform: translateX(25%);
+      }
+    }
+
+    &:nth-child(2) {
+      z-index: 1;
+      transform: translateX(-25%);
+
+      .inner-holder {
+        transform: translateX(0);
+      }
+    }
+
+    &:last-child {
+      z-index: 0;
+      transform: translateX(-50%);
+
+      .holder-frame {
+        border-right: 0;
+      }
+    }
+
+    &.current {
+      .inner-holder {
+        transform: translateX(0);
+      }
+
+      +.slide {
+        // .inner-holder {
+        //   transform: translateX(25%) !important;
+        // }
+      }
+    }
+  }
+
+  .holder-frame {
+    border-right: 15px solid #eee;
+    padding-bottom: calc((1200/860)*100%);
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background: #eee;
+  }
+
+  .inner-holder {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-position: 50% 50%;
+    background-size: cover;
+    transition: transform .3s;
+  }
+}
