@@ -28,7 +28,7 @@
 
     .slide-text {
       @include animate (opacity);
-      width: 90%;
+      display: none;
       opacity: 0;
     }
   }
@@ -62,7 +62,10 @@
 
         .slide-text {
           @include animate (opacity);
+          display: block;
           opacity: 1;
+          width: 90%;
+
         }
       }
 
