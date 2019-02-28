@@ -22,7 +22,7 @@
 
     .slide-text {
       @include animate (opacity);
-      display: none;
+      width: 90%;
       opacity: 0;
     }
   }
@@ -55,10 +55,8 @@
         padding: 0 15px;
 
         .slide-text {
-          display: block;
+          @include animate (opacity);
           opacity: 1;
-          width: 90%;
-
         }
       }
 
