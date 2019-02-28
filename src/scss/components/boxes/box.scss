@@ -1,0 +1,125 @@
+.box {
+  position: relative;
+  max-width: 240px;
+  background-color: #fff;
+  padding: 200px 30px 40px 45px;
+  overflow: hidden;
+  margin: 0 15px 15px 0;
+
+  &:last-child {
+    margin-right: 0;
+  }
+
+  @include media ('<1035px') {
+    width: 100%;
+    max-width: 49%;
+    margin-right: 0;
+  }
+
+  @include media ('<tablet') {
+    padding: 50px 90px 20px 65px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  @include media ('<phone') {
+    padding: 50px 50px 20px 65px;
+    width: 100%;
+    max-width: 100%;
+    margin-right: 0;
+  }
+
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 10px;
+  }
+
+  &:after {
+    @include animate (transform, 0.15s);
+    position: absolute;
+    top: 0;
+    left: 0;
+    content: '';
+    height: 100%;
+    width: 10px;
+    background: #fff;
+    transform: translateY(100%);
+  }
+
+  &.active {
+    &:after {
+      @include animate (transform, 0.15s);
+      transform: translateY(66%);
+    }
+
+    .collapse {
+      .line:first-child {
+        @include animate (transform, 0.15s);
+        transform: rotate(0);
+      }
+    }
+
+    .entry-text {
+
+      .text {
+        @include animate (opacity, 0.15s);
+        opacity: 1;
+      }
+    }
+  }
+
+  &.hovered {
+    &:after {
+      @include animate (transform, 0.15s);
+      transform: translateY(94%);
+    }
+  }
+
+  @for $i from 1 through 4 {
+    &-#{$i} {
+      &:before {
+        background: url('../../../../assets/images/box-#{$i}.jpg') no-repeat;
+      }
+    }
+  }
+
+  .entry-text {
+    .heading {
+      text-transform: uppercase;
+      font-size: 24px;
+      @include media ('<tablet') {
+        margin-bottom: 60px;
+      }
+    }
+
+    .text {
+      @include animate (opacity, 0.15s);
+      margin-top: auto;
+      opacity: 0;
+    }
+  }
+
+  .collapse {
+    position: relative;
+    margin: 0 0 0 10px;
+
+    .line {
+      top: 50%;
+      width: 14px;
+      height: 4px;
+      position: absolute;
+      background: #268df6;
+      content: '';
+
+      &:first-child {
+        @include animate (transform, 0.15s);
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

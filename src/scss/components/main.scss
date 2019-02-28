@@ -1,11 +1,9 @@
-@import //'holder-frame',
-        'transform',
-        'launch',
-        'bring',
-        'create',
-        'three-slide-accordion',
-        'three-slide-mobile-gallery',
-        'four-slide-accordion',
-        'four-slide-mobile-gallery';
-        // 'solutions';
-        // 'images';
+@import 'animations/main';
+
+@import 'three-slide/main';
+
+@import 'four-slide/main';
+
+@import 'boxes/main';
+
+@import 'links';
