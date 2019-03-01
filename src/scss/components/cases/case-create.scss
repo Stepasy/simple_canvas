@@ -1,0 +1,60 @@
+@mixin position($img-width, $img-height, $part-width, $part-height, $part-number) {
+  $width: calc(#{$part-width}/#{$img-width}*100);
+  $height: calc(#{$part-height}/#{$img-height}*100);
+  $bg-size-x: calc(100% * (100 / #{$width}));
+  $bg-size-y: calc(100% * (100 / #{$height}));
+  $top: calc(#{$part-number} * 100%/#{$img-height}*50);
+  $left: calc(#{$part-number} * 100%/#{$img-width}*50);
+  width: calc(1% * #{$width});
+  height: calc(1% * #{$height});
+  top: $top;
+  left: $left;
+  background-size: calc(#{$bg-size-x}) calc(#{$bg-size-y});
+}
+
+.create-inner-holder {
+
+  .case-holder-frame:hover & {
+
+    .case-create {
+
+      &.part1 {
+        transform: scale(1);
+      }
+
+      &.part2 {
+        transform: scale(0.8);
+      }
+
+      &.part3 {
+        transform: scale(0.6);
+      }
+    }
+  }
+
+  .case-create {
+    position: absolute;
+    z-index: 3;
+    width: 100%;
+    height: 100%;
+    background: url('../../../assets/images/case-create.jpg') no-repeat;
+    transform: scale(1.3);
+
+    &.part1 {
+      @include position(650, 650, 650, 650, 0);
+      transition: transform 1.1s ease-in-out;
+    }
+
+    &.part2 {
+      @include position(650, 650, 550, 550, 1);
+      transition: transform 1.3s ease-in-out;
+      background-position: 50% 50%;
+    }
+
+    &.part3 {
+      @include position(650, 650, 450, 450, 2);
+      transition: transform 1.5s ease-in-out;
+      background-position: 50% 50%;
+    }
+  }
+}
