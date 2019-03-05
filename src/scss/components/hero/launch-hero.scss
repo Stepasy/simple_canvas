@@ -1,0 +1,129 @@
+.hero__launch {
+  &.hero-active {
+    .launch-mask {
+      opacity: 0;
+    }
+
+    .launch.part1 {
+      background-position: 0 50%;
+    }
+
+    .launch.part2 {
+      background-position: 0 100%;
+    }
+
+    .launch.part3 {
+      background-position: 0 96%;
+    }
+
+    .launch.part4 {
+      background-position: 0 85%;
+    }
+  }
+
+  .launch {
+    background: url('../../../../assets/images/hero-launch-480.jpg') no-repeat;
+
+    @include media ('>479px') {
+      background: url('../../../../assets/images/hero-launch-768.jpg') no-repeat;
+    }
+
+    @include media ('>767px') {
+      background: url('../../../../assets/images/hero-launch-980.jpg') no-repeat;
+    }
+
+    @include media ('>979px') {
+      background: url('../../../../assets/images/hero-launch-1200.jpg') no-repeat;
+    }
+
+    @include media ('>1199px') {
+      background: url('../../../../assets/images/hero-launch-1920.jpg') no-repeat;
+    }
+
+    @include media ('>1919px') {
+      background: url('../../../../assets/images/hero-launch.jpg') no-repeat;
+    }
+  }
+
+  .launch-mask {
+    z-index: 5;
+    opacity: 1;
+    background: url('../../../../assets/images/hero-launch-mask-480.jpg') no-repeat;
+
+    @include media ('>479px') {
+      background: url('../../../../assets/images/hero-launch-mask-768.jpg') no-repeat;
+    }
+
+    @include media ('>767px') {
+      background: url('../../../../assets/images/hero-launch-mask-980.jpg') no-repeat;
+    }
+
+    @include media ('>979px') {
+      background: url('../../../../assets/images/hero-launch-mask-1200.jpg') no-repeat;
+    }
+
+    @include media ('>1199px') {
+      background: url('../../../../assets/images/hero-launch-mask-1920.jpg') no-repeat;
+    }
+
+    @include media ('>1919px') {
+      background: url('../../../../assets/images/hero-launch-mask.jpg') no-repeat;
+    }
+  }
+
+  .launch,
+  .launch-mask {
+    position: absolute;
+    width: 100%;
+    height: 25%;
+    background-size: 100% 400%;
+
+    &.mask1 {
+      transition: opacity .5s ease 1.2s;
+      top: 0;
+      background-position: 0 0;
+    }
+
+    &.part1 {
+      transition: background-position 6s ease 1.2s;
+      top: 0;
+      background-position: 0 0;
+    }
+
+    &.mask2 {
+      transition: opacity .5s ease .8s;
+      top: 25%;
+      background-position: 0 25%;
+    }
+
+    &.part2 {
+      transition: background-position 6s ease .8s;
+      top: 25%;
+      background-position: 0 25%;
+    }
+
+    &.mask3 {
+      transition: opacity .5s ease .4s;
+      top: 50%;
+      background-position: 0 50%;
+    }
+
+    &.part3 {
+      transition: background-position 6s ease .4s;
+      top: 50%;
+      background-position: 0 50%;
+    }
+
+    &.mask4 {
+      transition: opacity .5s ease 0s;
+      top: 75%;
+      background-position: 0 75%;
+    }
+
+    &.part4 {
+      transition: background-position 6s ease 0s;
+      top: 75%;
+      background-position: 0 75%;
+    }
+  }
+}
