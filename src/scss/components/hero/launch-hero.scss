@@ -22,52 +22,52 @@
   }
 
   .launch {
-    background: url('../../../../assets/images/hero-launch-480.jpg') no-repeat;
+    background: url('../../../../assets/images/launch/hero-launch-480.jpg') no-repeat;
 
     @include media ('>479px') {
-      background: url('../../../../assets/images/hero-launch-768.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-768.jpg') no-repeat;
     }
 
     @include media ('>767px') {
-      background: url('../../../../assets/images/hero-launch-980.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-980.jpg') no-repeat;
     }
 
     @include media ('>979px') {
-      background: url('../../../../assets/images/hero-launch-1200.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-1200.jpg') no-repeat;
     }
 
     @include media ('>1199px') {
-      background: url('../../../../assets/images/hero-launch-1920.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-1920.jpg') no-repeat;
     }
 
     @include media ('>1919px') {
-      background: url('../../../../assets/images/hero-launch.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch.jpg') no-repeat;
     }
   }
 
   .launch-mask {
     z-index: 5;
     opacity: 1;
-    background: url('../../../../assets/images/hero-launch-mask-480.jpg') no-repeat;
+    background: url('../../../../assets/images/launch/hero-launch-mask-480.jpg') no-repeat;
 
     @include media ('>479px') {
-      background: url('../../../../assets/images/hero-launch-mask-768.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-mask-768.jpg') no-repeat;
     }
 
     @include media ('>767px') {
-      background: url('../../../../assets/images/hero-launch-mask-980.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-mask-980.jpg') no-repeat;
     }
 
     @include media ('>979px') {
-      background: url('../../../../assets/images/hero-launch-mask-1200.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-mask-1200.jpg') no-repeat;
     }
 
     @include media ('>1199px') {
-      background: url('../../../../assets/images/hero-launch-mask-1920.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-mask-1920.jpg') no-repeat;
     }
 
     @include media ('>1919px') {
-      background: url('../../../../assets/images/hero-launch-mask.jpg') no-repeat;
+      background: url('../../../../assets/images/launch/hero-launch-mask.jpg') no-repeat;
     }
   }
 

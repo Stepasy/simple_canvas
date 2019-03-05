@@ -1,0 +1,174 @@
+.hero__bring {
+  &.hero-active {
+    .bring-mask {
+      opacity: 0;
+    }
+
+    .bring.part1 {
+      background-position: 5% 0;
+    }
+
+    .bring-mask.mask1 {
+      background-position: 35% 0;
+    }
+
+    .bring.part2 {
+      background-position: 25% 0;
+    }
+
+    .bring-mask.mask2 {
+      background-position: 50% 0;
+    }
+
+    .bring.part3 {
+      background-position: 32% 0;
+    }
+
+    .bring-mask.mask3 {
+      background-position: 65% 0;
+    }
+
+    .bring.part4 {
+      background-position: 40% 0;
+    }
+
+    .bring-mask.mask4 {
+      background-position: 80% 0;
+    }
+
+    .bring.part5 {
+      background-position: 94% 0;
+    }
+
+    .bring-mask.mask5 {
+      background-position: 80% 0;
+    }
+  }
+
+  .bring {
+    background: url('../../../../assets/images/bring/hero-bring-480.jpg') no-repeat;
+
+    @include media ('>479px') {
+      background: url('../../../../assets/images/bring/hero-bring-768.jpg') no-repeat;
+    }
+
+    @include media ('>767px') {
+      background: url('../../../../assets/images/bring/hero-bring-980.jpg') no-repeat;
+    }
+
+    @include media ('>979px') {
+      background: url('../../../../assets/images/bring/hero-bring-1200.jpg') no-repeat;
+    }
+
+    @include media ('>1199px') {
+      background: url('../../../../assets/images/bring/hero-bring-1920.jpg') no-repeat;
+    }
+
+    @include media ('>1919px') {
+      background: url('../../../../assets/images/bring/hero-bring.jpg') no-repeat;
+    }
+  }
+
+  .bring-mask {
+    z-index: 5;
+    opacity: 1;
+    background: url('../../../../assets/images/bring/hero-bring-mask-480.jpg') no-repeat;
+
+    @include media ('>479px') {
+      background: url('../../../../assets/images/bring/hero-bring-mask-768.jpg') no-repeat;
+    }
+
+    @include media ('>767px') {
+      background: url('../../../../assets/images/bring/hero-bring-mask-980.jpg') no-repeat;
+    }
+
+    @include media ('>979px') {
+      background: url('../../../../assets/images/bring/hero-bring-mask-1200.jpg') no-repeat;
+    }
+
+    @include media ('>1199px') {
+      background: url('../../../../assets/images/bring/hero-bring-mask-1920.jpg') no-repeat;
+    }
+
+    @include media ('>1919px') {
+      background: url('../../../../assets/images/bring/hero-bring-mask.jpg') no-repeat;
+    }
+  }
+
+  .bring,
+  .bring-mask {
+    position: absolute;
+    width: 12.5%;
+    height: 100%;
+    background-size: 800% 100%;
+
+    &.mask1 {
+      transition: opacity 1s ease-in-out 0s,
+        background-position 1s ease-in-out;
+      left: 0;
+      background-position: 40% 0;
+    }
+
+    &.part1 {
+      transition: background-position 4s ease-in-out 0s;
+      left: 0;
+      background-position: 40% 0;
+    }
+
+    &.mask2 {
+      transition: opacity 1s ease-in-out 0.3s,
+        background-position 1.3s ease-in-out;
+      left: 12.5%;
+      background-position: 55% 0;
+    }
+
+    &.part2 {
+      transition: background-position 4s ease-in-out 0.3s;
+      left: 12.5%;
+      background-position: 55% 0;
+    }
+
+    &.mask3 {
+      transition: opacity 1s ease-in-out 0.6s,
+        background-position 1.6s ease-in-out;
+      left: 25%;
+      background-position: 70% 0;
+    }
+
+    &.part3 {
+      transition: background-position 4s ease-in-out 0.6s;
+      left: 25%;
+      background-position: 70% 0;
+    }
+
+    &.mask4 {
+      transition: opacity 1s ease-in-out 0.9s,
+        background-position 1.9s ease-in-out;
+      left: 37.5%;
+      background-position: 85% 0;
+    }
+
+    &.part4 {
+      transition: background-position 4s ease-in-out 0.9s;
+      left: 37.5%;
+      background-position: 85% 0;
+    }
+
+    &.mask5 {
+      transition: opacity 1s ease-in-out 2.5s,
+        background-position 3.5s ease-in-out;
+      width: 50%;
+      left: 50%;
+      background-position: 95% 0;
+      background-size: 200% 100%;
+    }
+
+    &.part5 {
+      transition: background-position 4s ease-in-out 1.2s;
+      width: 50%;
+      left: 50%;
+      background-position: 100% 0;
+      background-size: 200% 100%;
+    }
+  }
+}

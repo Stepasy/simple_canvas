@@ -3,12 +3,12 @@ const hero = (($) => {
     const $holder = $('.hero');
     const ACTIVE = 'hero-active';
     const $delay = 1000;
+    const $window = $(window);
 
     if ($holder.length === 0) return;
 
-    $holder.on('mouseenter', () => {
+    $window.on('load', () => {
       setTimeout(() => {
-        console.log(123);
         $holder.addClass(ACTIVE);
       }, $delay);
     });
