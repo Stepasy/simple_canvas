@@ -1,0 +1,137 @@
+.transform-inner-holder {
+
+  background: url('../../../assets/images/case-transform.jpg') no-repeat;
+  background-size: 100% 100%;
+
+  .case-holder-frame:hover & {
+
+    .case-transform {
+      &.part1 {
+        transform: scale(1.2);
+        height: 100%;
+      }
+
+      &.part2 {
+        height: 0;
+        background-position: 10% 100%;
+      }
+
+      &.part3 {
+        height: 50%;
+      }
+
+      &.part4 {
+        height: 65%;
+        transform: scale(1.5);
+        background-position: 40% 120%;
+      }
+
+      &.part5 {
+        height: 20%;
+      }
+
+      &.part6 {
+        top: 15%;
+        height: 50%;
+        background-position: 40% 90%;
+      }
+
+      &.part7 {
+        height: 70%;
+        background-position: 76% 12%;
+      }
+    }
+  }
+
+  .case-transform {
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    background: url('../../../assets/images/case-transform.jpg') no-repeat;
+    background-size: 500%;
+
+    &.part1 {
+      transition: height 1.4s ease-in-out,
+        background-position 1.4s ease-in-out,
+        transform 1.4s ease-in-out;
+      height: 40%;
+      top: 0;
+      background-position: 0 19%;
+      z-index: 5;
+    }
+
+    &.part2 {
+      transition: height 1.5s ease-in-out,
+        background-position 1.5s ease-in-out;
+      height: 40%;
+      bottom: 0;
+      background-position: 0 100%;
+      z-index: 4;
+    }
+
+    &.part3 {
+      transition: height 1.5s ease-in-out;
+      height: 40%;
+      left: 20%;
+      top: 0;
+      background-position: 20% 40%;
+      height: 75%;
+      z-index: 7;
+
+      &__mask {
+        left: 20%;
+        height: 100%;
+        top: 0;
+        z-index: 6;
+        background-position: 20% 0;
+      }
+    }
+
+    &.part4 {
+      transition: height 1.5s ease-in-out,
+        transform 1.5s ease-in-out,
+        background-position 1.5s ease-in-out;
+      left: 40%;
+      height: 50%;
+      background-position: 40% 100%;
+      bottom: 0;
+    }
+
+    &.part5 {
+      transition: height 1.5s ease-in-out;
+      height: 33.33%;
+      left: 60%;
+      top: 0;
+      z-index: 7;
+      background-position: 76% 10%;
+
+      &__mask {
+        left: 60%;
+        height: 100%;
+        top: 0;
+        z-index: 6;
+        background-position: 76% 61%;
+      }
+    }
+
+    &.part6 {
+      transition: top 1.5s ease-in-out,
+        height 1.5s ease-in-out,
+        background-position 1.5s ease-in-out;
+      left: 60%;
+      top: 80%;
+      height: 40%;
+      background-position: 76% 112%;
+      z-index: 7;
+    }
+
+    &.part7 {
+      transition: height 1.5s ease-in-out,
+        background-position 1.5s ease-in-out;
+      height: 33.33%;
+      left: 80%;
+      top: 0;
+      background-position: 100% 12%;
+    }
+  }
+}
