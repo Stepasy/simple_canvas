@@ -15,7 +15,7 @@
       height: 100%;
       background: #eee;
       content: '';
-      z-index: 5;
+      z-index: 20;
     }
 
     &:after {
@@ -26,7 +26,7 @@
       height: calc(((515 - 458) / 515) * 100%);
       background: #eee;
       content: '';
-      z-index: 5;
+      z-index: 20;
     }
   }
 

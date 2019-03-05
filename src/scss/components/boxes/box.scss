@@ -2,7 +2,7 @@
   position: relative;
   max-width: 240px;
   background-color: #fff;
-  padding: 200px 30px 40px 45px;
+  padding: 145px 56px 131px 23px;
   overflow: hidden;
   margin: 0 15px 15px 0;
 
@@ -92,6 +92,7 @@
     .heading {
       text-transform: uppercase;
       font-size: 24px;
+
       @include media ('<tablet') {
         margin-bottom: 60px;
       }

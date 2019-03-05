@@ -1,12 +1,5 @@
-/* eslint-disable*/
-
-const boxes = ($ => {
-
-  const init = () => {
-    _animation();
-  };
-
-  const _animation = () => {
+const boxes = (($) => {
+  const animation = () => {
     const $boxes = $('.boxes');
     if ($boxes.length === 0) return;
 
@@ -20,62 +13,62 @@ const boxes = ($ => {
     let $addingTimer;
     let $removingTimer;
 
-    const _classAdding = (el) => {
+    const classAdding = (el) => {
       $(el).addClass(ACTIVE).removeClass(HOVERED);
-    }
+    };
 
-    const _addingTimer = (el, time) => {
+    const addingTimer = (el, time) => {
       $addingTimer = setTimeout(() => {
-        _classAdding(el);
+        classAdding(el);
       }, time);
     };
 
-    const _stopAddingTimer = () => {
+    const stopAddingTimer = () => {
       clearTimeout($addingTimer);
     };
 
-    const _classRemoving = (el) => {
+    const classRemoving = (el) => {
       $(el).removeClass(ACTIVE);
       $box.removeClass(ACTIVE);
-    }
+    };
 
-    const _removingTimer = (el, time) => {
+    const removingTimer = (el, time) => {
       $removingTimer = setTimeout(() => {
-        _classRemoving(el);
+        classRemoving(el);
       }, time);
     };
 
-    const _stopRemovingTimer = () => {
+    const stopRemovingTimer = () => {
       clearTimeout($removingTimer);
     };
 
-    const _addClass = (el, event) => {
+    const addClass = (el, event) => {
       $(el).on(event, () => {
         if (!($(el).hasClass(ACTIVE))) $(el).addClass(HOVERED);
-        _addingTimer(el, $delay);
+        addingTimer(el, $delay);
       });
     };
 
-    const _removeClass = (el, event) => {
+    const removeClass = (el, event) => {
       $(el).on(event, () => {
-        _stopAddingTimer();
-        _stopRemovingTimer();
-        _removingTimer(el, $delay);
+        stopAddingTimer();
+        stopRemovingTimer();
+        removingTimer(el, $delay);
         $(el).removeClass(HOVERED);
       });
     };
 
     $box.each((i, element) => {
-      _addClass(element, 'mouseenter');
-      _removeClass(element, 'mouseleave');
+      addClass(element, 'mouseenter');
+      removeClass(element, 'mouseleave');
     });
-
-  }
-
-  return {
-    init
+  };
+  const init = () => {
+    animation();
   };
 
+  return {
+    init,
+  };
 })(jQuery);
-
 export default boxes;
