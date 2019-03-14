@@ -1,0 +1,189 @@
+.hero__transform {
+  &.hero-active {
+    .transform-mask {
+      opacity: 0;
+    }
+
+    .transform.part1 {
+      background-position: 2% 69%;
+      top: 0%;
+    }
+
+    .transform.part2 {
+      background-position: 16% 55%;
+    }
+
+    .transform.part3 {
+      top: -6%;
+    }
+
+    .transform.part4 {
+      background-position: 41% 65%;
+      top: -5%;
+    }
+
+    .transform.part5 {
+      top: 50%;
+    }
+
+    .transform.part6 {
+      top: -5%;
+      background-position: 70.5% 60%;
+    }
+
+    .transform.part7 {
+      top: 0;
+      background-position: 84% 0;
+    }
+
+    .transform.part8 {
+      top: 15%;
+    }
+  }
+
+  .transform,
+  .transform-bg {
+    background: url('../../../../assets/images/transform/hero-transform.jpg') no-repeat;
+
+    // @include media ('>479px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-768.jpg') no-repeat;
+    // }
+
+    // @include media ('>767px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-980.jpg') no-repeat;
+    // }
+
+    // @include media ('>979px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-1200.jpg') no-repeat;
+    // }
+
+    // @include media ('>1199px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-1920.jpg') no-repeat;
+    // }
+
+    // @include media ('>1919px') {
+    //   background: url('../../../../assets/images/transform/hero-transform.jpg') no-repeat;
+    // }
+  }
+
+  .transform-mask {
+    position: absolute;
+    z-index: 5;
+    opacity: 1;
+    background: url('../../../../assets/images/transform/hero-transform-mask.jpg') no-repeat;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+
+    // @include media ('>479px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-mask-768.jpg') no-repeat;
+    // }
+
+    // @include media ('>767px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-mask-980.jpg') no-repeat;
+    // }
+
+    // @include media ('>979px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-mask-1200.jpg') no-repeat;
+    // }
+
+    // @include media ('>1199px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-mask-1920.jpg') no-repeat;
+    // }
+
+    // @include media ('>1919px') {
+    //   background: url('../../../../assets/images/transform/hero-transform-mask.jpg') no-repeat;
+    // }
+  }
+
+  .transform-bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-size: 100% 100%;
+  }
+
+  .transform {
+    position: absolute;
+    width: 12%;
+    height: 25%;
+    background-size: 833.33% 400%;
+
+    &.part1 {
+      transition: top 2.5s ease-in-out,
+        background-position 2.2s ease-in-out;
+      left: 2%;
+      top: -40%;
+      height: 60%;
+      background-size: 833.33% 166.66%;
+      background-position: 2% -150%;
+    }
+
+    &.part2 {
+      transition: background-position 2.5s ease-in-out;
+      left: 14%;
+      bottom: 0;
+      height: 30%;
+      background-size: 833.33% 333.33%;
+      background-position: 16% 99%;
+    }
+
+    &.part3 {
+      transition: top 2.5s ease-in-out;
+      left: 26%;
+      height: 53%;
+      top: 20%;
+      background-size: 833.33% 188.68%;
+      background-position: 29% 33%;
+    }
+
+    &.part4 {
+      transition: top 2.5s ease-in-out,
+        background-position 2.2s ease-in-out;
+      left: 38%;
+      top: -20%;
+      height: 60%;
+      background-size: 833.33% 166.67%;
+      background-position: 41% -50%;
+    }
+
+    &.part5 {
+      transition: top 2.5s ease-in-out;
+      left: 50%;
+      top: 40%;
+      height: 50%;
+      background-size: 833.33% 200%;
+      background-position: 57% 80%;
+    }
+
+    &.part6 {
+      transition: top 2.5s ease-in-out,
+        background-position 2.2s ease-in-out;
+      height: 60%;
+      left: 62%;
+      top: 15%;
+      background-size: 833.33% 166.67%;
+      background-position: 70.5% 30%;
+    }
+
+    &.part7 {
+      transition: top 2.5s ease-in-out,
+        background-position 2.2s ease-in-out;
+      left: 74%;
+      top: 0;
+      height: 80%;
+      background-size: 833.33% 125%;
+      background-position: 84% -50%;
+    }
+
+    &.part8 {
+      transition: top 2.5s ease-in-out,
+        background-position 2.2s ease-in-out;
+      left: 86%;
+      top: 0;
+      height: 70%;
+      background-size: 833.33% 142.86%;
+      background-position: 98% 0;
+    }
+  }
+}
