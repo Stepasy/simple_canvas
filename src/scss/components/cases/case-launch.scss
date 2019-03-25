@@ -1,0 +1,65 @@
+.launch-inner-holder {
+
+  .case-holder-frame:hover & {
+
+    .case-launch {
+
+      &.part1 {
+        background-position: 100% 100%;
+      }
+
+      &.part2 {
+        background-position: 100% 100%;
+      }
+
+      &.part3 {
+        background-position: 100% 100%;
+      }
+
+      &.part4 {
+        background-position: 100% 100%;
+      }
+    }
+  }
+
+  .case-launch {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../../assets/images/case-launch.jpg');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    will-change: background-position;
+    &.part1 {
+      transition: background-position 2s ease-in-out;
+      height: 55%;
+      bottom: 45%;
+      background-size: 100% calc(10000%/55);
+      background-position: 100% 0%;
+    }
+
+    &.part2 {
+      transition: background-position 2s ease-in-out;
+      height: 15%;
+      bottom: 30%;
+      background-size: 100% calc(10000%/15);
+      background-position: 100% 64.8%;
+    }
+
+    &.part3 {
+      height: 15%;
+      bottom: 15%;
+      background-size: 100% calc(10000%/15);
+      background-position: 100% 82.3%;
+      transition: background-position 2s ease-in-out;
+    }
+
+    &.part4 {
+      height: 15%;
+      bottom: 0;
+      background-size: 100% calc(10000%/13);
+      background-position: 100% 97.6%;
+      transition: background-position 2s ease-in-out;
+    }
+  }
+}

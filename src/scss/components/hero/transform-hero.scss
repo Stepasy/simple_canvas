@@ -108,10 +108,11 @@
     width: 12%;
     height: 25%;
     background-size: 833.33% 400%;
-
+    will-change: top, background-position;
+    transform: translateZ(0);
     &.part1 {
-      transition: top 2.5s ease-in-out,
-        background-position 2.2s ease-in-out;
+      transition: top 2.5s linear,
+        background-position 2.2s linear;
       left: 2%;
       top: -40%;
       height: 60%;
@@ -120,7 +121,7 @@
     }
 
     &.part2 {
-      transition: background-position 2.5s ease-in-out;
+      transition: background-position 2.5s linear;
       left: 14%;
       bottom: 0;
       height: 30%;
@@ -129,7 +130,7 @@
     }
 
     &.part3 {
-      transition: top 2.5s ease-in-out;
+      transition: top 2.5s linear;
       left: 26%;
       height: 53%;
       top: 20%;
@@ -138,8 +139,8 @@
     }
 
     &.part4 {
-      transition: top 2.5s ease-in-out,
-        background-position 2.2s ease-in-out;
+      transition: top 2.5s linear,
+        background-position 2.2s linear;
       left: 38%;
       top: -20%;
       height: 60%;
@@ -148,7 +149,7 @@
     }
 
     &.part5 {
-      transition: top 2.5s ease-in-out;
+      transition: top 2.5s linear;
       left: 50%;
       top: 40%;
       height: 50%;
@@ -157,8 +158,8 @@
     }
 
     &.part6 {
-      transition: top 2.5s ease-in-out,
-        background-position 2.2s ease-in-out;
+      transition: top 2.5s linear,
+        background-position 2.2s linear;
       height: 60%;
       left: 62%;
       top: 15%;
@@ -167,8 +168,8 @@
     }
 
     &.part7 {
-      transition: top 2.5s ease-in-out,
-        background-position 2.2s ease-in-out;
+      transition: top 2.5s linear,
+        background-position 2.2s linear;
       left: 74%;
       top: 0;
       height: 80%;
@@ -177,8 +178,8 @@
     }
 
     &.part8 {
-      transition: top 2.5s ease-in-out,
-        background-position 2.2s ease-in-out;
+      transition: top 2.5s linear,
+        background-position 2.2s linear;
       left: 86%;
       top: 0;
       height: 70%;

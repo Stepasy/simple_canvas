@@ -1,0 +1,143 @@
+@mixin position($img-width, $img-height, $part-width, $part-height, $part-number) {
+  $width: calc(#{$part-width}/#{$img-width}*100);
+  $height: calc(#{$part-height}/#{$img-height}*100);
+  $bg-size-x: calc(100% * (100 / #{$width}));
+  $bg-size-y: calc(100% * (100 / #{$height}));
+  $top: calc(#{$part-number} * 100%/#{$img-height}*200);
+  $left: calc(#{$part-number} * 100%/#{$img-width}*200);
+  width: calc(1% * #{$width});
+  height: calc(1% * #{$height});
+  top: $top;
+  left: $left;
+  background-size: calc(#{$bg-size-x}) calc(#{$bg-size-y});
+}
+
+.hero__create {
+  &.hero-active {
+    .create-mask {
+      opacity: 0;
+    }
+    .create.part1 {
+      transform: scale(1.4);
+    }
+    .create.part2 {
+      transform: scale(1.3);
+      background-position: 25% 50%;
+    }
+    .create.part3 {
+      transform: scale(1.2);
+    }
+  }
+  .create {
+    background: url('../../../../assets/images/create/hero-create-480.jpg') no-repeat;
+    @include media ('>479px') {
+      background: url('../../../../assets/images/create/hero-create-768.jpg') no-repeat;
+    }
+    @include media ('>767px') {
+      background: url('../../../../assets/images/create/hero-create-980.jpg') no-repeat;
+    }
+    @include media ('>979px') {
+      background: url('../../../../assets/images/create/hero-create-1200.jpg') no-repeat;
+    }
+    @include media ('>1199px') {
+      background: url('../../../../assets/images/create/hero-create-1920.jpg') no-repeat;
+    }
+    @include media ('>1919px') {
+      background: url('../../../../assets/images/create/hero-create.jpg') no-repeat;
+    }
+  }
+  .part-holder {
+    &1 {
+      overflow: hidden;
+      position: absolute;
+      top: calc(0 * 100%/1440*200);
+      left: calc(0 * 100%/2560*200);
+      width: calc(1% * calc(2560/2560*100));
+      height: calc(1% * calc(1440/1440*100));
+    }
+    &2 {
+      overflow: hidden;
+      position: absolute;
+      top: calc(1 * 100%/1440*200);
+      left: calc(1 * 100%/2560*200);
+      width: calc(1% * calc(2120/2560*100));
+      height: calc(1% * calc(1020/1440*100));
+    }
+    &3 {
+      overflow: hidden;
+      position: absolute;
+      top: calc(2 * 100%/1440*227);
+      left: calc(2 * 100%/2560*227);
+      width: calc(1% * calc(1600/2560*100));
+      height: calc(1% * calc(530/1440*100));
+    }
+  }
+  .create-mask {
+    opacity: 1;
+    background: url('../../../../assets/images/create/hero-create-mask-480.jpg') no-repeat;
+    @include media ('>479px') {
+      background: url('../../../../assets/images/create/hero-create-mask-768.jpg') no-repeat;
+    }
+    @include media ('>767px') {
+      background: url('../../../../assets/images/create/hero-create-mask-980.jpg') no-repeat;
+    }
+    @include media ('>979px') {
+      background: url('../../../../assets/images/create/hero-create-mask-1200.jpg') no-repeat;
+    }
+    @include media ('>1199px') {
+      background: url('../../../../assets/images/create/hero-create-mask-1920.jpg') no-repeat;
+    }
+    @include media ('>1919px') {
+      background: url('../../../../assets/images/create/hero-create-mask.jpg') no-repeat;
+    }
+  }
+  .create,
+  .create-mask {
+    position: absolute;
+    &.mask1 {
+      @include position(2560, 1440, 2560, 1440, 0);
+      transition: opacity .5s linear 1.15s;
+      z-index: 2;
+    }
+    &.part1 {
+      @include position(2560, 1440, 2560, 1440, 0);
+      transition: transform 4.3s linear 1.15s;
+      z-index: 1;
+    }
+    &.mask2 {
+      @include position(2560, 1440, 2120, 1020, 1);
+      transition: opacity .15s linear .45s;
+      z-index: 3;
+    }
+    &.part2 {
+      @include position(2560, 1440, 2560, 1440, 1);
+      transition: transform 5s linear .45s, background-position 5s linear .45s;
+      background-size: 120.75% 141.18%;
+      background-position: 50% 50%;
+      z-index: 2;
+    }
+    &.mask3 {
+      @include position(2560, 1440, 1600, 530, 2);
+      transition: opacity .15s linear .15s;
+      top: calc(2 * 100%/1440*227);
+      left: calc(2 * 100%/2560*227);
+      z-index: 4;
+    }
+    &.part3 {
+      @include position(2560, 1440, 2560, 1440, 2);
+      transition: transform 5.3s linear .15s;
+      background-size: 160% 271.7%;
+      background-position: 50% 50%;
+      z-index: 3;
+    }
+  }
+
+  @for $i from 1 to 4 {
+    .create.part#{$i}{
+      height: 100%;
+      width: 100%;
+      left: 0;
+      top: 0;
+    }
+  }
+}
